@@ -15,7 +15,16 @@ dir1 = parent + "h5"+File.separator;
 File.makeDirectory(dir1);
 setBatchMode(true);
 
-list = getFileList(dir);
+listall = getFileList(dir);
+ext = ".czi";
+list = newArray(0);
+for (i = 0; i < listall.length; i++) {
+	print(listall.length);
+	if(endsWith(listall[i], ext)) {
+	list = Array.concat(list,listall[i]);
+	}
+}
+
 
 		for (i=0; i<list.length; i++) 
 		{
